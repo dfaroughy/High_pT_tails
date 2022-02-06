@@ -1,0 +1,25 @@
+* 31.02.2002 *
+
+- [fixed] the FVLR in dimoun and dielectron are wrong! these are all interfernces and no NP^2 (where replaced buy a stupid typo)
+
+- generate dipole samples for dimuon and dielectrons... I don't know why it failed......
+
+- Generate eve muvt samples. After fixing above
+
+- Generate all mediator samples 
+
+* 02.02.2022 *
+
+- [fixed]  generate dipole samples for dimuon and dielectrons... I don't know why this failed..
+
+- [fixed] Generate eve muvt samples. After fixing above
+
+- Generate all mediator samples 
+
+* 06.02.2022 *
+
+- Generate all mediator samples 
+
+- Generate LFV samples
+
+- generate F_01 and F_10 (from d=8) samples 

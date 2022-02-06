@@ -1,0 +1,99 @@
+import model /home/ttp/faroughy/Programs/MG5_aMC_v2_6_7/models/Semi_Leptonic_SMEFT_Dim6_UFO
+
+set nb_core 16
+
+define p = u~ c~
+define j = p
+generate  d p  > mu- vm~ / h  NP^2==2
+
+#==========
+output muvm/FD_lhco/PROC_muvm_FD_d_00_W_W_800_900
+launch -m
+16
+#==========
+
+shower=Pythia8
+detector=Delphes
+analysis=OFF
+done
+
+set nevents 50000
+set use_syst False
+set cut_decays False
+
+#==================
+# PDF and beam
+#==================
+
+set lpp1 1
+set lpp2 1
+set ebeam1 6500.0
+set ebeam2 6500.0
+set pdlabel lhapdf
+set lhaid 91500
+
+#==================
+# factorization scale
+#==================
+
+set dynamical_scale_choice 4
+
+#==================
+# parton cuts
+#==================
+
+set etal -1.0
+set etalmin 0.0
+set drll 0.0
+set drllmax -1.0
+set mmnl 0.0
+set mmnlmax -1.0
+set ptllmin 0.0
+set ptllmax -1.0
+set xptl 0.0
+set ptl1min 0.0
+set ptl2min 0.0
+set ptl1max -1.0
+set ptl2max -1.0
+
+set ptl 800
+set ptlmax 900
+set mmll 0.0
+set mmllmax -1.0
+
+#==================
+# Load delphes_card
+#==================
+
+/disk/data11/ttp/faroughy/Flavor_at_LHC/mu_vm/SMEFT/cards/delphes_card_mono-lepton.dat
+
+#====== 
+# run 1
+#======
+
+set run_tag FD_00_du_muvm_W_W_800_900
+
+set CdW11 1.0 
+set CdW12 0.0 
+
+done
+
+#======
+# run 2
+#======
+
+launch  -m
+16
+
+set run_tag FD_00_dc_muvm_W_W_800_900
+
+set CdW11 0.0 
+set CdW12 1.0 
+
+done
+
+
+
+
+
+
